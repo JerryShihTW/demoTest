@@ -1,0 +1,135 @@
+GIT指令
+
+1.檢查版本號
+git --version
+
+2.建立使用者資訊
+git config --global user.name Jeremy
+git config --global user.email shih1166@gmail.com
+
+3.初始化倉庫(產生.git)
+git init
+
+4.檔案狀態
+U->UnTrack(未追蹤)
+
+5.加入控管
+git add 檔案名稱(U>A) Add
+git add .
+
+6.加入控管後
+修改過的檔案(A>M) Modify
+-需要git add 確認
+
+7.控管狀態
+git status
+
+8.檢查物件對應檔案狀態
+git ls-files
+ 
+9.檢視物件內容(-p)跟型態(-t)
+git cat-file -p d80088
+
+10.控管後的刪除
+-A>D(deleted)
+-git add 3.txt
+-git restore 3.txt
+
+11.將目前暫存區的檔案變動加入倉庫
+git commit -m "備註名稱"
+git commit ==>vim編輯器
+
+12.檢視目前commit
+git log
+git log --oneline
+
+13.檢視目前分支(預設master)
+git branch
+
+14.切換coomit&branch
+git checkout 00fc9e
+git checkout master
+
+15.新增分支
+git branch test
+git checkout test
+二合一(新增和切換)
+git checkout -b test
+
+16.合併分支
+- master 合併其他分支
+git checkout master
+git merge test
+git branch -D test(刪除分支)
+
+17.合併失敗(衝突)
+-選擇本分支/其他分支/兩個都保留
+git merge --abort
+git add.
+git commit -m "合併修正完畢"
+
+18.看所有commit紀錄
+git reflog
+git checkout commit -object
+
+19.Reset重製指令(master=>commit)
+git reset 00fc9e
+git reset --hard 00fc9e
+
+20.加上雲端倉庫
+git remote add origin https://github.com/JerryShihTW/htmldemo.git
+
+21.檢視雲端倉庫url
+git remote -v
+origin  https://github.com/JerryShihTW/htmldemo.git (fetch)
+
+22.推送到雲端倉庫
+git push -u origin master
+git push
+
+23.複製專案
+git clone https://github.com/JerryShihTW/htmldemo
+
+24.加入暫存區的恢復 A->U
+git restore --staged <filename>
+
+25.將雲端版本同步本地端
+git pull
+
+26.合併commit
+git add .
+git commit -amend
+
+27.觀察雲端分支
+git branch -r
+
+28.fetch拉取缺少分支
+git fetch
+
+29.同步缺少分支
+git checkout -b test origin/test
+
+###常用指令
+git init 
+
+git add .
+
+git status
+
+git commit
+
+git log 
+
+git checkout branch/commic-object
+
+git checkout .(恢復)
+
+git branch
+
+git checkout -b-name
+
+git merge branch-name(切換其他分支)
+
+git reflog
+
+git reset --hard commit-object
