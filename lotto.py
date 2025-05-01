@@ -7,13 +7,17 @@ import random
 
 def get_lotto(count):
     n = []
-    for i in range(count):
+    while True:
         x = random.randint(1, 49)
-        n.append(x)
+        if x not in n:
+            n.append(x)
+        if len(n) == count:
+            break
     return n 
 
 for i in range(10):
-    print(get_lotto(6))
+    numbers = get_lotto(6)
+    print(sorted(numbers[:5]), numbers[-1])
 
 
 
