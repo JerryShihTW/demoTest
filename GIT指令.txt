@@ -14,7 +14,7 @@ git init
 U->UnTrack(未追蹤)
 
 5.加入控管
-git add 檔案名稱(U>A) Add
+git add 檔案名稱(U>A) Added
 git add .
 
 6.加入控管後
