@@ -4,3 +4,8 @@ images/
 *.png
 *.jpeg
 *.jpg
+
+video/
+*.mp4
+*.avi
+*.mov
